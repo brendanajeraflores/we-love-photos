@@ -5,10 +5,11 @@
             <tr>
                 <td rowspan="2">Foto</td>
                 <td>{{usuario.name}}</td>
-                <td rowspan="2"> See albums </td>
+                <!--<td rowspan="2"><a [routerLink]="['/usuario/{{usuario.id}}']">See albums</a></td>-->
             </tr>
             <tr >
                 <td>{{usuario.username}}</td>
             </tr>
+            <!--[routerLink]="['/usuario/{{usuario.id}}']"-->
     </tbody>
 </table>

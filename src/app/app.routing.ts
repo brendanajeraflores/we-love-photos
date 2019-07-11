@@ -8,7 +8,7 @@ const appRoutes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'home', component:HomeComponent},
     //{path: '**', component: HomeComponent},
-    {path: 'usuario', component: UsuarioComponent}
+    {path: 'usuario/:id', component: UsuarioComponent}
 ];
 
 export const AppRoutingProviders: any[] = [];

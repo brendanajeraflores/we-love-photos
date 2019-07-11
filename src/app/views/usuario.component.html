@@ -1,1 +1,22 @@
-<p>Hola mundo</p>
+<!--<div class="columns">
+    <div class="column">
+        Imagen
+    </div>
+    <div class="column">
+        {{ usuario.id }}
+    </div>
+</div>-->
+
+<p>{{ username }}</p>
+<p>{{ name }}</p>
+
+<table class="table is-fullwidth is-bordered">
+        <tbody *ngFor="let album of albumsUsuario">
+            
+                <tr>
+                    <td rowspan="2">Foto</td>
+                    <td>{{album.title}}</td>
+                </tr>
+        </tbody>
+    </table>
+    
