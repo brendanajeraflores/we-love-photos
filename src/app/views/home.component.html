@@ -1,0 +1,14 @@
+
+  <table class="table is-fullwidth is-bordered">
+    <tbody *ngFor="let usuario of usuarios">
+        
+            <tr>
+                <td rowspan="2">Foto</td>
+                <td>{{usuario.name}}</td>
+                <td rowspan="2"> See albums </td>
+            </tr>
+            <tr >
+                <td>{{usuario.username}}</td>
+            </tr>
+    </tbody>
+</table>
