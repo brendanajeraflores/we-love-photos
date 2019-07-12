@@ -9,6 +9,7 @@ import { PeticionesService } from '../services/peticiones.service';
 
 export class HomeComponent{
     public usuarios;
+    searchText;
 
     constructor(
         private _peticionesService: PeticionesService){

@@ -1,15 +1,34 @@
-
-  <table class="table is-fullwidth is-bordered">
-    <tbody *ngFor="let usuario of usuarios">
-        
-            <tr>
-                <td rowspan="2">Foto</td>
-                <td>{{usuario.name}}</td>
-                <!--<td rowspan="2"><a [routerLink]="['/usuario/{{usuario.id}}']">See albums</a></td>-->
-            </tr>
-            <tr >
-                <td>{{usuario.username}}</td>
-            </tr>
-            <!--[routerLink]="['/usuario/{{usuario.id}}']"-->
-    </tbody>
-</table>
+<head>
+<link rel="stylesheet" href="assets/home.component.css">
+</head>
+<div class="field is-horizontal">
+    <div class="is-normal label-search">
+        <label class="label">Search</label>
+    </div>
+    <div class="field-body">
+        <div class="field">
+        <p class="control">
+            <input class="input is-primary" type="text" name="search" [(ngModel)]="searchText" autocomplete="off">
+        </p>
+        </div>
+    </div>
+</div>
+<br>
+<div class="control">
+    <table class="table is-fullwidth is-bordered">
+        <tbody *ngFor="let usuario of usuarios  | filter:searchText">         
+                <tr>
+                    <td rowspan="2">
+                        <figure class="image is-64x64">
+                            <img src="assets/bora-bora.jpg">
+                        </figure>
+                    </td>
+                    <td>{{usuario.name}}</td>
+                    <td rowspan="2"><a [routerLink]="['/usuario', usuario.id]">See albums</a></td>
+                </tr>
+                <tr >
+                    <td>{{usuario.username}}</td>
+                </tr>
+        </tbody>
+    </table>
+</div>

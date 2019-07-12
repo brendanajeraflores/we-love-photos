@@ -1,0 +1,17 @@
+<head>
+        <link rel="stylesheet" href="assets/usuario.component.css">
+        </head>
+        <div>
+    by {{ username }}
+</div>
+
+    <div class="cardList">
+            <ng-container *ngFor="let photo of albumPhotos">
+                <div class="cardListItem has-text-centered">
+                    <figure class="image is-128x128 center">
+                        <img src="assets/bora-bora.jpg">
+                    </figure>
+                    <a  [routerLink]="['/album', idUsuario, album.id]">{{album.title}}</a>
+                </div>
+            </ng-container>
+        </div>
