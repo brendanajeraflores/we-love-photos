@@ -14,6 +14,8 @@ export class AlbumComponent{
     public idAlbum;
     public albumPhotos;
     public username;
+    public albumsUsuario;
+    public nameAlbum;
 
     constructor(
         private _peticionesService: PeticionesService,
@@ -26,13 +28,11 @@ export class AlbumComponent{
         this._route.params.forEach((params: Params) => {
             this.idUsuario = params['idUsuario'];
             this.idAlbum = params['idAlbum'];
-            console.log(params);
         })
         this._peticionesService.getUsuarioIndividual(this.idUsuario).subscribe(
             result => {
                 this.usuario = result;
                 this.username = this.usuario.username
-                console.log(result);
             }, 
             error => {
                 var errorMensaje = <any>error;
@@ -42,7 +42,21 @@ export class AlbumComponent{
         this._peticionesService.getAlbumPhotos(this.idAlbum).subscribe(
             result => {
                 this.albumPhotos = result;
-                console.log(result);
+            }, 
+            error => {
+                var errorMensaje = <any>error;
+                console.log(errorMensaje);
+            }
+        );
+        this._peticionesService.getAlbumsUsuario(this.idUsuario).subscribe(
+            result => {
+                this.albumsUsuario = result;
+                this.albumsUsuario.forEach((value) => {
+                    if (value.id == this.idAlbum) {
+                        this.nameAlbum = value.title;
+                    }
+                });
+                
             }, 
             error => {
                 var errorMensaje = <any>error;

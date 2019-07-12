@@ -15,19 +15,19 @@
 </div>
 <br>
 <div class="control">
-    <table class="table is-fullwidth is-bordered">
-        <tbody *ngFor="let usuario of usuarios  | filter:searchText">         
+    <table class="table-usu">
+        <tbody *ngFor="let usuario of usuarios  | grdFilter: {name: searchText, username:searchText}">         
                 <tr>
-                    <td rowspan="2">
+                    <td class="img" rowspan="2">
                         <figure class="image is-64x64">
                             <img src="assets/bora-bora.jpg">
                         </figure>
                     </td>
-                    <td>{{usuario.name}}</td>
+                    <td>@{{usuario.username}}</td>
                     <td rowspan="2"><a [routerLink]="['/usuario', usuario.id]">See albums</a></td>
                 </tr>
                 <tr >
-                    <td>{{usuario.username}}</td>
+                    <td class="espacio-nombre">{{usuario.name}}</td>
                 </tr>
         </tbody>
     </table>

@@ -9,6 +9,7 @@ import { routing, AppRoutingProviders } from './app.routing';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { GrdFilterPipe } from './grd-filter.pipe';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home.component';
@@ -20,7 +21,8 @@ import { AlbumComponent } from './components/album.component';
     AppComponent,
     HomeComponent,
     UsuarioComponent,
-    AlbumComponent
+    AlbumComponent,
+    GrdFilterPipe
   ],
   imports: [
     BrowserModule,

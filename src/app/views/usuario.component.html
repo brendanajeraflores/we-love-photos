@@ -1,6 +1,7 @@
 <head>
-        <link rel="stylesheet" href="assets/usuario.component.css">
-        </head><div>
+    <link rel="stylesheet" href="assets/usuario.component.css">
+</head>
+<div>
     <table>
         <tr>
             <td rowspan="2">
@@ -8,17 +9,15 @@
                     <img src="assets/bora-bora.jpg">
                 </figure>
             </td>
-            <td>{{ username }}</td>
+            <td><h4 class="title is-4 espacio">{{ username }}</h4></td>
         </tr>
         <tr >
-            <td>{{ name }}</td>
+            <td><h5 class="subtitle is-5 espacio">by {{ name }}</h5></td>
         </tr>
     </table>
 </div>
 <br>
-<div class="is-normal">
-    <label class="label">&Aacute;lbums</label>
-</div>
+<h4 class="title is-4 ">&Aacute;lbums</h4>
 <div class="cardList">
     <ng-container *ngFor="let album of albumsUsuario">
         <div class="cardListItem has-text-centered">
